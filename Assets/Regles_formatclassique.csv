@@ -1,16 +1,16 @@
-ï»¿Question,Reponse1,Reponse2,Reponse3,Reponse4,Bonnereponse,Niveau,Totbonnesreps
-Quelle est la dimension d'un terrain de volleyball reglementaire en metres ?,18m x 9m,20m x 12m,15m x 7m,25m x 14m,1,1,0
-Combien de joueurs y a-t-il dans une equipe de volleyball sur le terrain lors d'un match officiel ?,5,6,7,8,2,1,0
-Quelle est la hauteur reglementaire du filet de volleyball masculin ?,2.24 metres,2.43 metres,2.55 metres,2.74 metres,2,1,0
-Quelle est la hauteur reglementaire du filet de volleyball feminin ?,2.24 metres,2.43 metres,2.55 metres,2.74 metres,1,2,0
-Quel est le geste technique utilise pour servir le ballon au debut d'un point ?,Smash,Service,Passe,Manchette,3,3,0
-Quel est le geste technique utilise pour empecher le ballon de toucher le sol en le frappant au-dessus du filet ?,Smash,Service,Passe,Manchette,4,3,0
-Quel geste technique est utilise pour renvoyer le ballon au-dessus du filet en frappant avec le poing ferme ?,Smash,Service,Passe,Manchette,1,3,0
-Quel est le signe d'arbitrage pour une faute de double contact ?,Doigt leve,Main ouverte,Deux doigts pointes,Main serree,2,4,0
-Quel est le signe d'arbitrage pour une faute de pied ?,Tapoter le pied,Clignoter des yeux,Cligner des oreilles,Agiter la main,1,4,0
-Quelle est la duree reglementaire d'un match de volleyball ?,1 heure,2 heures,3 heures,4 heures,1,4,0
-Quel est le geste technique utilise pour renvoyer le ballon avec les mains ouvertes ?,Smash,Service,Passe,Manchette,3,5,0
-Quel est le signe d'arbitrage pour une faute de touche ?,Doigt leve,Main ouverte,Deux doigts pointes,Main serree,1,5,0
-Quelle est la taille de la zone de service en volleyball ?,2 metres,3 metres,4 metres,5 metres,1,5,0
-Quelle est la duree de repos entre deux sets d'un match de volleyball ?,1 minute,2 minutes,3 minutes,4 minutes,2,6,0
-Quel est le geste technique utilise pour renvoyer le ballon en le touchant du bout des doigts ?,Smash,Service,Passe,Manchette,2,6,0
+Question,Réponse 1,Réponse 2,Réponse 3,Réponse 4,Numéro de la bonne réponse,Numéro du niveau,chiffre 0
+Quelle est la taille du filet pour les hommes en volleyball,2m,2.24m,2.43m,2.55m,3,1,0
+Quelle est la taille du terrain de volleyball en mètres carrés,260,324,432,512,2,1,0
+Combien de joueurs y a-t-il dans une équipe de volleyball,6,7,5,4,1,1,0
+Quelle technique est utilisée pour recevoir une balle haute?,manchette,passe.haute,porté,défense,1,2,0
+Comment appelle-t-on la technique où le ballon est frappé avec force vers le sol côté adverse?,smash,attaque,lifté,contre,1,2,0
+Quelle est la durée d'un set dans un match de volleyball officiel?,25,30,15,20,4,3,0
+Combien de remplacements un joueur est-il autorisé à effectuer dans un match de volleyball?,6,4,unlimited,3,1,3,0
+Quel est le temps maximum autorisé pour effectuer un remplacement?,15s,30s,45s,1min,2,3,0
+Quelle est la principale différence entre les matchs de volleyball masculins et féminins?,la taille du terrain,la hauteur du filet,le nombre de joueurs,la durée du match,2,3,0
+Quel terme est utilisé pour décrire un service direct non retourné par l'équipe adverse?,ace,balle.out,service.gagnant,point,1,4,0
+Quel est le terme utilisé pour désigner une attaque réussie?,j'ai,je.m'en.souviens,je.continue,je.revendique,1,4,0
+Quel terme est utilisé pour désigner une reprise de jeu après une faute?,reprise,faute.bonus,rejoue,repêchage,1,4,0
+Qui est généralement responsable de l'organisation du jeu dans une équipe de volleyball?,le passeur,le libéro,le pointu,le central,1,5,0
+Quel est le joueur responsable de la défense arrière?,libéro,pointu,central,passeur,1,5,0
+Quel est le rôle du central dans une équipe de volleyball?,bloquer,attaquer,défendre,servir,1,5,0
