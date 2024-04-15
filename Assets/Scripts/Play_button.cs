@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 
 public class Play_button : MonoBehaviour
 {
@@ -632,9 +633,12 @@ public class Play_button : MonoBehaviour
 
     }
 
-        void OnServiceButtonClick()
+  void OnServiceButtonClick()
     {
         SceneManager.LoadScene("Service");
+        #if UNITY_EDITOR
+        UnityEditor.Lightmapping.Bake();
+        #endif
     }
 
     void OnManchetteButtonClick()
@@ -649,7 +653,7 @@ public class Play_button : MonoBehaviour
 
     void OnSmatchButtonClick()
     {
-        SceneManager.LoadScene("Smatch");
+        SceneManager.LoadScene("Smash");
     }
 
     void OnBlocButtonClick()
