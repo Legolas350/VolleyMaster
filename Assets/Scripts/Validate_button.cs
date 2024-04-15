@@ -24,7 +24,6 @@ public class Validate_button : MonoBehaviour
     public Button Answer_2;
     public Button Answer_3;
     public Button Answer_4;
-
     public Image netImage; 
 
     public Button Logo;
@@ -43,7 +42,6 @@ public class Validate_button : MonoBehaviour
         validationButton.GetComponent<Button>().onClick.AddListener(ValidateAnswer); // Attach ValidateAnswer to the click event of the validation button
 
         correctionButton.GetComponent<Button>().onClick.AddListener(DisplayNewQuestion); // Attach DisplayNewQuestion to the click event of the correction button
-
         // Charger le CSV et afficher la première question
         LoadCSV(@"C:\Users\lilou\Documents\CSNumVi\Impliquer\VolleyMaster\Assets\Regles_formatclassique.csv");
         DisplayRandomQuestion();
@@ -95,7 +93,7 @@ public class Validate_button : MonoBehaviour
             int parsedLevel;
             if (int.TryParse(line[6], out parsedLevel))
             {
-                return parsedLevel == niveau && int.Parse(line[7]) <= 3;
+                   return parsedLevel == niveau && int.Parse(line[7]) < 2;
             }
             else
             {
@@ -123,7 +121,7 @@ public class Validate_button : MonoBehaviour
         foreach (var line in filteredData)
         {
             int questionTotalCorrectAnswers = int.Parse(line[7]);
-            if (questionTotalCorrectAnswers > 3)
+            if (questionTotalCorrectAnswers >= 2)
             {
                 totalCorrectAnswers++;
             }
@@ -163,24 +161,25 @@ public class Validate_button : MonoBehaviour
         }
 
         Debug.Log("L'index de la bonne réponse est : " + bonneReponseIndex); // Ajout du message de débogage
-
         // Afficher le bouton de validation
-        validationButton.SetActive(true);
-    }
+            validationButton.SetActive(true);
+        }
 
 
-    public void ClickonAnswer(int selectedIndex)
-    {
-        this.selectedIndex = selectedIndex;
-    }
-
-    public void ValidateAnswer()
-    {
-        validationButton.SetActive(false); // Cacher le bouton Valider
-
-        if (selectedIndex == bonneReponseIndex)
+        public void ClickonAnswer(int selectedIndex)
         {
+            this.selectedIndex = selectedIndex;
+        }
+
+        public void ValidateAnswer()
+        {
+            validationButton.SetActive(false); // Cacher le bouton Valider
+
+            if (selectedIndex == bonneReponseIndex)
+            {
             // Réponse correcte
+            // Enregistrer les données mises à jour dans le fichier CSV
+            SaveCSV();
 
             // Si la réponse est correcte, incrémentez le score total des bonnes réponses
             totbonnesrep++;
@@ -205,51 +204,48 @@ public class Validate_button : MonoBehaviour
                     Answer_4.GetComponent<Image>().color = Color.green;
                     break;
             }
-        }
-        else
-        {
-            // Réponse incorrecte
-            correctionText.text = "Dommage...";
-            Debug.Log("Mauvaise réponse !");
-            // Change la couleur du bouton cliqué en rouge
-            switch (selectedIndex)
-            {
-                case 1:
-                    Answer_1.GetComponent<Image>().color = Color.red;
-                    break;
-                case 2:
-                    Answer_2.GetComponent<Image>().color = Color.red;
-                    break;
-                case 3:
-                    Answer_3.GetComponent<Image>().color = Color.red;
-                    break;
-                case 4:
-                    Answer_4.GetComponent<Image>().color = Color.red;
-                    break;
             }
-            // Afficher la bonne réponse en vert
-            switch (bonneReponseIndex)
+            else
             {
-                case 1:
-                    Answer_1.GetComponent<Image>().color = Color.green;
-                    break;
-                case 2:
-                    Answer_2.GetComponent<Image>().color = Color.green;
-                    break;
-                case 3:
-                    Answer_3.GetComponent<Image>().color = Color.green;
-                    break;
-                case 4:
-                    Answer_4.GetComponent<Image>().color = Color.green;
-                    break;
+                // Réponse incorrecte
+                correctionText.text = "Dommage...";
+                Debug.Log("Mauvaise réponse !");
+                // Change la couleur du bouton cliqué en rouge
+                switch (selectedIndex)
+                {
+                    case 1:
+                        Answer_1.GetComponent<Image>().color = Color.red;
+                        break;
+                    case 2:
+                        Answer_2.GetComponent<Image>().color = Color.red;
+                        break;
+                    case 3:
+                        Answer_3.GetComponent<Image>().color = Color.red;
+                        break;
+                    case 4:
+                        Answer_4.GetComponent<Image>().color = Color.red;
+                        break;
+                }
+                // Afficher la bonne réponse en vert
+                switch (bonneReponseIndex)
+                {
+                    case 1:
+                        Answer_1.GetComponent<Image>().color = Color.green;
+                        break;
+                    case 2:
+                        Answer_2.GetComponent<Image>().color = Color.green;
+                        break;
+                    case 3:
+                        Answer_3.GetComponent<Image>().color = Color.green;
+                        break;
+                    case 4:
+                        Answer_4.GetComponent<Image>().color = Color.green;
+                        break;
+                }
+                correctionButton.GetComponent<Image>().color = Color.red; // Change la couleur du bouton correctionButton en rouge
             }
-            correctionButton.GetComponent<Image>().color = Color.red; // Change la couleur du bouton correctionButton en rouge
-        }
 
-        correctionButton.SetActive(true); // Afficher le bouton Correction
-        
-        // Enregistrer les données mises à jour dans le fichier CSV
-        SaveCSV();
+            correctionButton.SetActive(true); // Afficher le bouton Correction
 
     }
 
@@ -261,11 +257,10 @@ public class Validate_button : MonoBehaviour
 
         correctionButton.SetActive(false); // Cacher le bouton Correction
         DisplayRandomQuestion(); // Afficher une nouvelle question
-    }
-
+    } 
     private void ResetButtonColors()
     {
-        // Réinitialiser la couleur de tous les boutons à leur couleur normale
+         // Réinitialiser la couleur de tous les boutons à leur couleur normale
         Answer_1.GetComponent<Image>().color = Color.white;
         Answer_2.GetComponent<Image>().color = Color.white;
         Answer_3.GetComponent<Image>().color = Color.white;
@@ -338,7 +333,6 @@ public class Validate_button : MonoBehaviour
         // Afficher un message d'erreur si la question actuelle n'a pas été trouvée dans le fichier CSV
         Debug.LogError("La question actuelle n'a pas été trouvée dans le fichier CSV.");
     }
-
 
 
 }
