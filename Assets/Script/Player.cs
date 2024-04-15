@@ -75,6 +75,12 @@ public class Player : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandl
         transform.position = initialPosition; // or any other default position
     }
 
+    public void SetPosition(int index)
+    {
+        targetPosition = targetPositions[gameObject.name][index];
+        transform.position = targetPosition+mOffset;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
