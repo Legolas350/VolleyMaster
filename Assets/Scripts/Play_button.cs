@@ -14,6 +14,7 @@ public class Play_button : MonoBehaviour
     public Button techniqueButton;
     public Image netImage;
     public Button[] Regles_nv_buttons;
+    public Button[] Technique_nv_buttons;
     public static int niveau = 6;
     public int nbofQuestion = 0;
 
@@ -31,6 +32,11 @@ public class Play_button : MonoBehaviour
     public Button Logo;
     public TextMeshProUGUI Location_text;
     public Button Location;
+    public Button serviceButton;
+    public Button manchetteButton;
+    public Button passeButton;
+    public Button smatchButton;
+    public Button blocButton;
 
     void Start()
     {
@@ -46,12 +52,12 @@ public class Play_button : MonoBehaviour
                 reglesButton = reglesButtonGameObject.GetComponent<Button>();
                 if (reglesButton == null)
                 {
-                    UnityEngine.Debug.LogError("Le composant Button n'a pas été trouvé sur le GameObject 'Regles_button'.");
+                    UnityEngine.Debug.Log("Le composant Button n'a pas été trouvé sur le GameObject 'Regles_button'.");
                 }
             }
             else
             {
-                UnityEngine.Debug.LogError("Le GameObject 'Regles_button' n'a pas été trouvé dans la scène.");
+                UnityEngine.Debug.Log("Le GameObject 'Regles_button' n'a pas été trouvé dans la scène.");
             }
         }
 
@@ -63,12 +69,12 @@ public class Play_button : MonoBehaviour
                 postesButton = postesButtonGameObject.GetComponent<Button>();
                 if (postesButton == null)
                 {
-                    UnityEngine.Debug.LogError("Le composant Button n'a pas été trouvé sur le GameObject 'Postes_button'.");
+                    UnityEngine.Debug.Log("Le composant Button n'a pas été trouvé sur le GameObject 'Postes_button'.");
                 }
             }
             else
             {
-                UnityEngine.Debug.LogError("Le GameObject 'Postes_button' n'a pas été trouvé dans la scène.");
+                UnityEngine.Debug.Log("Le GameObject 'Postes_button' n'a pas été trouvé dans la scène.");
             }
         }
 
@@ -80,12 +86,12 @@ public class Play_button : MonoBehaviour
                 jeuButton = jeuButtonGameObject.GetComponent<Button>();
                 if (jeuButton == null)
                 {
-                    UnityEngine.Debug.LogError("Le composant Button n'a pas été trouvé sur le GameObject 'Jeu_button'.");
+                    UnityEngine.Debug.Log("Le composant Button n'a pas été trouvé sur le GameObject 'Jeu_button'.");
                 }
             }
             else
             {
-                UnityEngine.Debug.LogError("Le GameObject 'Jeu_button' n'a pas été trouvé dans la scène.");
+                UnityEngine.Debug.Log("Le GameObject 'Jeu_button' n'a pas été trouvé dans la scène.");
             }
         }
 
@@ -97,12 +103,12 @@ public class Play_button : MonoBehaviour
                 techniqueButton = techniqueButtonGameObject.GetComponent<Button>();
                 if (techniqueButton == null)
                 {
-                    UnityEngine.Debug.LogError("Le composant Button n'a pas été trouvé sur le GameObject 'Technique_button'.");
+                    UnityEngine.Debug.Log("Le composant Button n'a pas été trouvé sur le GameObject 'Technique_button'.");
                 }
             }
             else
             {
-                UnityEngine.Debug.LogError("Le GameObject 'Technique_button' n'a pas été trouvé dans la scène.");
+                UnityEngine.Debug.Log("Le GameObject 'Technique_button' n'a pas été trouvé dans la scène.");
             }
         }
 
@@ -114,12 +120,12 @@ public class Play_button : MonoBehaviour
                 netImage = netImageGameObject.GetComponent<Image>();
                 if (netImage == null)
                 {
-                    UnityEngine.Debug.LogError("Le composant Image n'a pas été trouvé sur le GameObject 'NetImage'.");
+                    UnityEngine.Debug.Log("Le composant Image n'a pas été trouvé sur le GameObject 'NetImage'.");
                 }
             }
             else
             {
-                UnityEngine.Debug.LogError("Le GameObject 'NetImage' n'a pas été trouvé dans la scène.");
+                UnityEngine.Debug.Log("Le GameObject 'NetImage' n'a pas été trouvé dans la scène.");
             }
             
         }
@@ -141,12 +147,12 @@ public class Play_button : MonoBehaviour
                     }
                     else
                     {
-                        UnityEngine.Debug.LogError("Le composant Button n'a pas été trouvé sur le GameObject 'Rnv" + (i + 1) + "_button'.");
+                        UnityEngine.Debug.Log("Le composant Button n'a pas été trouvé sur le GameObject 'Rnv" + (i + 1) + "_button'.");
                     }
                 }
                 else
                 {
-                    UnityEngine.Debug.LogError("Le GameObject 'Rnv" + (i + 1) + "_button' n'a pas été trouvé dans la scène.");
+                    UnityEngine.Debug.Log("Le GameObject 'Rnv" + (i + 1) + "_button' n'a pas été trouvé dans la scène.");
                 }
             }
 
@@ -159,12 +165,18 @@ public class Play_button : MonoBehaviour
             Location.gameObject.SetActive(false);
         }
 
+        // Ajouter des écouteurs de clic pour chaque bouton de niveau
+        foreach(Button button in Regles_nv_buttons)
+        {
+            button.onClick.AddListener(OnReglesNvButtonClick);
+        }
+
 
         // On attache une fonction au clic sur le bouton "Play"
         if (playButton != null)
             playButton.onClick.AddListener(OnPlayButtonClick);
         else
-            UnityEngine.Debug.LogError("Le GameObject 'Play_button' n'a pas été trouvé dans la scène.");
+            UnityEngine.Debug.Log("Le GameObject 'Play_button' n'a pas été trouvé dans la scène.");
 
         // Ajouter des écouteurs de clic pour chaque bouton
         if (reglesButton != null)
@@ -185,11 +197,7 @@ public class Play_button : MonoBehaviour
         if (PNNv2_button != null)
             PNNv2_button.onClick.AddListener(OnExercicesButtonClick);
 
-        // Ajouter des écouteurs de clic pour chaque bouton de niveau
-        foreach(Button button in Regles_nv_buttons)
-        {
-            button.onClick.AddListener(OnReglesNvButtonClick);
-        }
+
 
         // Charger le CSV
         LoadCSV(Path.Combine(Application.dataPath, "Regles_formatclassique.csv"));
@@ -206,7 +214,7 @@ public class Play_button : MonoBehaviour
                 sliders[i] = sliderGameObject.GetComponent<Slider>();
                 if (sliders[i] == null)
                 {
-                    UnityEngine.Debug.LogError("Le composant Slider n'a pas été trouvé sur le GameObject 'Slider" + (i + 1) + "'.");
+                    UnityEngine.Debug.Log("Le composant Slider n'a pas été trouvé sur le GameObject 'Slider" + (i + 1) + "'.");
                 }
                 else
                 {
@@ -216,7 +224,7 @@ public class Play_button : MonoBehaviour
             }
             else
             {
-                UnityEngine.Debug.LogError("Le GameObject 'Slider" + (i + 1) + "' n'a pas été trouvé dans la scène.");
+                UnityEngine.Debug.Log("Le GameObject 'Slider" + (i + 1) + "' n'a pas été trouvé dans la scène.");
             }
         }
 
@@ -247,12 +255,12 @@ public class Play_button : MonoBehaviour
                     }
                     else
                     {
-                        UnityEngine.Debug.LogError("Le composant Text slider n'a pas été trouvé sur le GameObject 'Pourcent" + (i + 1));
+                        UnityEngine.Debug.Log("Le composant Text slider n'a pas été trouvé sur le GameObject 'Pourcent" + (i + 1));
                     }
                 }
                 else
                 {
-                    UnityEngine.Debug.LogError("Le GameObject 'Pourcent" + (i + 1) + "n a pas été trouvé dans la scène.");
+                    UnityEngine.Debug.Log("Le GameObject 'Pourcent" + (i + 1) + "n a pas été trouvé dans la scène.");
                 }
             }
         }
@@ -265,6 +273,77 @@ public class Play_button : MonoBehaviour
         // Récupère le bouton "Logo" et ajoute un écouteur pour son clic
         Button logoButton = GameObject.Find("Logo").GetComponent<Button>();
         logoButton.onClick.AddListener(RetournerAuMenu);
+
+        /*
+        // Référencez les nouveaux boutons
+        // Recherche des boutons avec leurs balises
+        serviceButton = GameObject.FindWithTag("TNv1_button").GetComponent<Button>();
+        manchetteButton = GameObject.FindWithTag("TNv2_button").GetComponent<Button>();
+        passeButton = GameObject.FindWithTag("TNv3_button").GetComponent<Button>();
+        smatchButton = GameObject.FindWithTag("TNv4_button").GetComponent<Button>();
+        blocButton = GameObject.FindWithTag("TNv5_button").GetComponent<Button>();
+
+        // Vérification de la référence des boutons
+        if (serviceButton == null)
+        {
+            Debug.LogWarning("Le bouton 'Service_button' n'a pas été trouvé dans la scène ou sa référence n'a pas été correctement attribuée.");
+        }
+
+        if (manchetteButton == null)
+        {
+            Debug.LogWarning("Le bouton 'Manchette_button' n'a pas été trouvé dans la scène ou sa référence n'a pas été correctement attribuée.");
+        }
+
+        if (passeButton == null)
+        {
+            Debug.LogWarning("Le bouton 'Passe_button' n'a pas été trouvé dans la scène ou sa référence n'a pas été correctement attribuée.");
+        }
+
+        if (smatchButton == null)
+        {
+            Debug.LogWarning("Le bouton 'Smatch_button' n'a pas été trouvé dans la scène ou sa référence n'a pas été correctement attribuée.");
+        }
+
+        if (blocButton == null)
+        {
+            Debug.LogWarning("Le bouton 'Bloc_button' n'a pas été trouvé dans la scène ou sa référence n'a pas été correctement attribuée.");
+        }
+
+
+        */
+
+        if (passeButton == null)
+        {
+            GameObject passeButtonGameObject = GameObject.Find("Passe_button");
+            if (passeButtonGameObject != null)
+            {
+                passeButton = passeButtonGameObject.GetComponent<Button>();
+                if (passeButton == null)
+                {
+                    UnityEngine.Debug.Log("Le composant Button n'a pas été trouvé sur le GameObject 'Passe_button'.");
+                }
+            }
+            else
+            {
+                UnityEngine.Debug.Log("Le GameObject 'Passe_button' n'a pas été trouvé dans la scène.");
+            }
+
+        }
+
+        // Ajoutez des écouteurs de clic pour les nouveaux boutons
+        serviceButton.onClick.AddListener(OnServiceButtonClick);
+        manchetteButton.onClick.AddListener(OnManchetteButtonClick);
+        passeButton.onClick.AddListener(OnPasseButtonClick);
+        smatchButton.onClick.AddListener(OnSmatchButtonClick);
+        blocButton.onClick.AddListener(OnBlocButtonClick);
+        
+        // Activer les boutons manquants
+        serviceButton.gameObject.SetActive(false);
+        manchetteButton.gameObject.SetActive(false);
+        passeButton.gameObject.SetActive(false);
+        smatchButton.gameObject.SetActive(false);
+        blocButton.gameObject.SetActive(false);
+
     }
 
     void OnPlayButtonClick()
@@ -311,7 +390,7 @@ public class Play_button : MonoBehaviour
         }
         else
         {
-            Debug.LogError("CSV file not found at: " + filePath);
+            Debug.Log("CSV file not found at: " + filePath);
         }
     }
 
@@ -331,6 +410,7 @@ public class Play_button : MonoBehaviour
             jeuButton.gameObject.SetActive(false);
         if (techniqueButton != null)
             techniqueButton.gameObject.SetActive(false);
+            
 
         //Activer les sliders de niveau
         foreach(Slider slider in sliders)
@@ -373,6 +453,7 @@ public class Play_button : MonoBehaviour
                 Regles_nv_buttons[i].interactable = false;
                 Color disabledColor = new Color(0.7f, 0.7f, 0.7f, 1f); // Couleur grise
                 Regles_nv_buttons[i].image.color = disabledColor; // Changer la couleur de l'image
+                Debug.Log("interactable = false de " + i);
             }
         }
     }
@@ -389,16 +470,16 @@ public class Play_button : MonoBehaviour
             if (totalQuestions == 0)
                 {
                     percentage = 1;
-                    Debug.LogError("je suis dans if de " + i);
+                    Debug.Log("je suis dans if de " + i);
                 }
             else 
                 {
                     percentage = (int)(((float)totalCorrectAnswers / (totalQuestions * 2)) * 100);
-                    Debug.LogError("je suis dans else de " + i);
+                    Debug.Log("je suis dans else de " + i);
 
                 }
 
-            Debug.LogError("nv ; " + (i+1) + ", pourcentage:" + percentage + ", totalCorrectAnswers" + totalCorrectAnswers + ", totalQuestions" + totalQuestions);
+            Debug.Log("nv ; " + (i+1) + ", pourcentage:" + percentage + ", totalCorrectAnswers" + totalCorrectAnswers + ", totalQuestions" + totalQuestions);
 
             // Mettre à jour la valeur du slider
             if (sliders[i] != null)
@@ -522,10 +603,7 @@ public class Play_button : MonoBehaviour
     // Fonction d'écouteur de clic pour le bouton "Jeu"
     void OnJeuButtonClick()
     {
-        Location.gameObject.SetActive(true);
-        // Mise à jour du texte de Location_text 
-        Location_text.text = "Section Défense";
-        SceneManager.LoadScene("Jeu");
+        SceneManager.LoadScene("Defense");
     }
 
     // Fonction d'écouteur de clic pour le bouton "Technique"
@@ -534,7 +612,49 @@ public class Play_button : MonoBehaviour
         Location.gameObject.SetActive(true);
         // Mise à jour du texte de Location_text 
         Location_text.text = "Section Technique";
-        SceneManager.LoadScene("Technique");
+
+        // Activer les boutons manquants
+        serviceButton.gameObject.SetActive(true);
+        manchetteButton.gameObject.SetActive(true);
+        passeButton.gameObject.SetActive(true);
+        smatchButton.gameObject.SetActive(true);
+        blocButton.gameObject.SetActive(true);
+
+        // On desactive les boutons de menu
+        if (reglesButton != null)
+            reglesButton.gameObject.SetActive(false);
+        if (postesButton != null)
+            postesButton.gameObject.SetActive(false);
+        if (jeuButton != null)
+            jeuButton.gameObject.SetActive(false);
+        if (techniqueButton != null)
+            techniqueButton.gameObject.SetActive(false);
+
+    }
+
+        void OnServiceButtonClick()
+    {
+        SceneManager.LoadScene("Service");
+    }
+
+    void OnManchetteButtonClick()
+    {
+        SceneManager.LoadScene("Manchette");
+    }
+
+    void OnPasseButtonClick()
+    {
+        SceneManager.LoadScene("Passe");
+    }
+
+    void OnSmatchButtonClick()
+    {
+        SceneManager.LoadScene("Smatch");
+    }
+
+    void OnBlocButtonClick()
+    {
+        SceneManager.LoadScene("Bloc");
     }
 
     void RetournerAuMenu()
