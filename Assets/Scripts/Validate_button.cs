@@ -43,7 +43,7 @@ public class Validate_button : MonoBehaviour
 
         correctionButton.GetComponent<Button>().onClick.AddListener(DisplayNewQuestion); // Attach DisplayNewQuestion to the click event of the correction button
         // Charger le CSV et afficher la première question
-        LoadCSV(@"C:\Users\lilou\Documents\CSNumVi\Impliquer\VolleyMaster\Assets\Regles_formatclassique.csv");
+        LoadCSV(Path.Combine(Application.dataPath, "Regles_formatclassique.csv"));
         DisplayRandomQuestion();
 
         // Récupère le bouton "Logo" et ajoute un écouteur pour son clic
@@ -76,7 +76,7 @@ public class Validate_button : MonoBehaviour
         }
         else
         {
-            Debug.LogError("CSV file not found at: " + filePath);
+            Debug.Log("CSV file not found at: " + filePath);
         }
     }
 
@@ -296,12 +296,12 @@ public class Validate_button : MonoBehaviour
 
     void SaveCSV()
     {
-        string filePath = @"C:\Users\lilou\Documents\CSNumVi\Impliquer\VolleyMaster\Assets\Regles_formatclassique.csv";
+        string filePath =Path.Combine(Application.dataPath, "Regles_formatclassique.csv");
 
         // Vérifier si le fichier existe
         if (!File.Exists(filePath))
         {
-            Debug.LogError("Fichier CSV non trouvé à l'emplacement: " + filePath);
+            Debug.Log("Fichier CSV non trouvé à l'emplacement: " + filePath);
             return;
         }
 
@@ -331,7 +331,7 @@ public class Validate_button : MonoBehaviour
         }
 
         // Afficher un message d'erreur si la question actuelle n'a pas été trouvée dans le fichier CSV
-        Debug.LogError("La question actuelle n'a pas été trouvée dans le fichier CSV.");
+        Debug.Log("La question actuelle n'a pas été trouvée dans le fichier CSV.");
     }
 
 

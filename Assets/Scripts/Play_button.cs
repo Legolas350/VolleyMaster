@@ -186,7 +186,7 @@ public class Play_button : MonoBehaviour
         }
 
         // Charger le CSV
-        LoadCSV(@"C:\Users\lilou\Documents\CSNumVi\Impliquer\VolleyMaster\Assets\Regles_formatclassique.csv");
+        LoadCSV(Path.Combine(Application.dataPath, "Regles_formatclassique.csv"));
     
         // Récupérer les références des sliders
         sliders = new Slider[6]; // 6 niveaux
