@@ -4889,7 +4889,7 @@ MonoBehaviour:
   - {fileID: 1303810905}
   PNNv1_button: {fileID: 1550247728}
   PNNv2_button: {fileID: 1776713096}
-  Logo: {fileID: 0}
+  Logo: {fileID: 696582382}
   Location_text: {fileID: 1987793298}
   Location: {fileID: 1730243236}
 --- !u!4 &1545356324

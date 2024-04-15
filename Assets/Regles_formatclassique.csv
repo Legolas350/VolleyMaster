@@ -1,10 +1,11 @@
-Quelle est la taille du terrain de volleyball en metres carres,260,324,432,512,2,1,2
-Combien de joueurs y a-t-il dans une equipe de volleyball,6,7,5,4,1,1,2
-Quelle technique est utilisee pour recevoir une balle haute?,manchette,passe haute,port�,d�fense,1,2,2
+Quelle est la taille du filet pour les hommes en volleyball,2m,2.24m,2.43m,2.55m,3,1,1
+Quelle est la taille du terrain de volleyball en metres carres,260,324,432,512,2,1,1
+Combien de joueurs y a-t-il dans une equipe de volleyball,6,7,5,4,1,1,0
+Quelle technique est utilisee pour recevoir une balle haute?,manchette,passe haute,port�,d�fense,1,2,0
 Comment appelle-t-on la technique o� le ballon est frappe avec force vers le sol c�t� adverse?,smash,attaque,lift�,contre,1,2,2
-Quelle est la duree d'un set dans un match de volleyball officiel?,25,30,15,20,4,3,1
+Quelle est la duree d'un set dans un match de volleyball officiel?,25,30,15,20,4,3,0
 Combien de remplacements un joueur est-il autorise � effectuer dans un match de volleyball?,6,4,unlimited,3,1,3,0
-Quel est le temps maximum autorise pour effectuer un remplacement?,15s,30s,45s,1min,2,3,1
+Quel est le temps maximum autorise pour effectuer un remplacement?,15s,30s,45s,1min,2,3,0
 Quelle est la principale difference entre les matchs de volleyball masculins et feminins?,la taille du terrain,la hauteur du filet,le nombre de joueurs,la duree du match,2,3,0
 Quel terme est utilise pour decrire un service direct non retourne par l'equipe adverse?,ace,balle.out,service.gagnant,point,1,4,0
 Quel est le terme utilise pour designer une attaque reussie?,jai,je.men.souviens,je.continue,je.revendique,1,4,0
@@ -12,3 +13,6 @@ Quel terme est utilise pour designer une reprise de jeu apres une faute?,reprise
 Qui est generalement responsable de l'organisation du jeu dans une equipe de volleyball?,le passeur,le libero,le pointu,le central,1,5,0
 Quel est le joueur responsable de la defense arriere?,libero,pointu,central,passeur,1,5,0
 Quel est le role du central dans une equipe de volleyball?,bloquer,attaquer,d�fendre,servir,1,5,0
+En quelle annee le volleyball a-t-il ete invente?,1895,1900,1910,1920,1,6,0
+Qui est credite de l'invention du volleyball?,william.g.morgan,george.washington,james.smith,robert.johnson,1,6,0
+Quel etait le nom original du volleyball?,mintonette,spikeball,balloncourt,volleygame,1,6,0

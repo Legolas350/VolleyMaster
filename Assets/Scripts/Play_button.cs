@@ -299,8 +299,6 @@ public class Play_button : MonoBehaviour
         {
             using (StreamReader reader = new StreamReader(filePath))
             {
-                // Ignorer la première ligne (noms de colonnes)
-                reader.ReadLine();
 
                 // Lire le reste du fichier
                 while (!reader.EndOfStream)
@@ -512,7 +510,7 @@ public class Play_button : MonoBehaviour
     void OnCoursButtonClick()
     {
         // Charger la scène des cours
-        SceneManager.LoadScene("CoursPostes");
+        SceneManager.LoadScene("CoursReception");
     }
 
     void OnExercicesButtonClick()
