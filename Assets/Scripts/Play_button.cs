@@ -28,6 +28,10 @@ public class Play_button : MonoBehaviour
     public Button PNNv1_button;
     public Button PNNv2_button;
 
+    public Button Logo;
+    public TextMeshProUGUI Location_text;
+    public Button Location;
+
     void Start()
     {
         // Si les boutons ne sont pas référencés dans l'inspecteur, on les trouve automatiquement
@@ -151,6 +155,8 @@ public class Play_button : MonoBehaviour
             {
                 textComponent.gameObject.SetActive(false);
             }    
+
+            Location.gameObject.SetActive(false);
         }
 
 
@@ -255,6 +261,10 @@ public class Play_button : MonoBehaviour
         {
             textComponent.gameObject.SetActive(false);
         }
+
+        // Récupère le bouton "Logo" et ajoute un écouteur pour son clic
+        Button logoButton = GameObject.Find("Logo").GetComponent<Button>();
+        logoButton.onClick.AddListener(RetournerAuMenu);
     }
 
     void OnPlayButtonClick()
@@ -276,6 +286,8 @@ public class Play_button : MonoBehaviour
         // Désactiver l'image "Net"
         if (netImage != null)
             netImage.gameObject.SetActive(false);
+
+  
 
     }
 
@@ -308,6 +320,10 @@ public class Play_button : MonoBehaviour
     // Fonction d'écouteur de clic pour le bouton "Règles"
     void OnReglesButtonClick()
     {
+        Location.gameObject.SetActive(true);
+        // Mise à jour du texte de Location_text 
+        Location_text.text = "Section Règles";
+
         // On desactive les boutons de menu
         if (reglesButton != null)
             reglesButton.gameObject.SetActive(false);
@@ -455,6 +471,7 @@ public class Play_button : MonoBehaviour
 
     void OnReglesNvButtonClick()
     {
+
         // Récupérer le bouton qui a été cliqué
         Button clickedButton = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
 
@@ -470,6 +487,8 @@ public class Play_button : MonoBehaviour
     // Fonction d'écouteur de clic pour le bouton "Postes"
     void OnPostesButtonClick()
     {
+        Location.gameObject.SetActive(true);
+
         // On desactive les boutons de menu
         if (reglesButton != null)
             reglesButton.gameObject.SetActive(false);
@@ -484,6 +503,9 @@ public class Play_button : MonoBehaviour
 
         PNNv1_button.gameObject.SetActive(true);
         PNNv2_button.gameObject.SetActive(true);
+
+        // Mise à jour du texte de Location_text 
+        Location_text.text = "Section Récéption";
 
     }
     
@@ -502,13 +524,46 @@ public class Play_button : MonoBehaviour
     // Fonction d'écouteur de clic pour le bouton "Jeu"
     void OnJeuButtonClick()
     {
+        Location.gameObject.SetActive(true);
+        // Mise à jour du texte de Location_text 
+        Location_text.text = "Section Défense";
         SceneManager.LoadScene("Jeu");
     }
 
     // Fonction d'écouteur de clic pour le bouton "Technique"
     void OnTechniqueButtonClick()
     {
+        Location.gameObject.SetActive(true);
+        // Mise à jour du texte de Location_text 
+        Location_text.text = "Section Technique";
         SceneManager.LoadScene("Technique");
+    }
+
+    void RetournerAuMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        LoadPlayButtonScript();
+    }
+
+        void LoadPlayButtonScript()
+    {
+        GameObject playButtonObject = GameObject.Find("Play_button"); // Assurez-vous que le nom est correct
+        if (playButtonObject != null)
+        {
+            Play_button playButtonScript = playButtonObject.GetComponent<Play_button>();
+            if (playButtonScript != null)
+            {
+                // Chargez votre script Play_button ici
+            }
+            else
+            {
+                Debug.LogWarning("Script Play_button introuvable sur l'objet Play_button.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Objet Play_button introuvable dans la scène.");
+        }
     }
 }
 
