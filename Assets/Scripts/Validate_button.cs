@@ -62,8 +62,6 @@ public class Validate_button : MonoBehaviour
         {
             using (StreamReader reader = new StreamReader(filePath))
             {
-                // Ignorer la première ligne (noms de colonnes)
-                reader.ReadLine();
 
                 // Lire le reste du fichier
                 while (!reader.EndOfStream)
@@ -315,7 +313,7 @@ public class Validate_button : MonoBehaviour
                 int currentTotal = int.Parse(csvData[i][7]); // Récupérer le total actuel des bonnes réponses
                 currentTotal++; // Incrémenter le total
                 csvData[i][7] = currentTotal.ToString(); // Mettre à jour le total des bonnes réponses dans la colonne correspondante
-
+                
                 // Réécrire le fichier CSV avec les données mises à jour
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
@@ -324,14 +322,16 @@ public class Validate_button : MonoBehaviour
                         writer.WriteLine(string.Join(",", rowData));
                     }
                 }
-
-                Debug.Log("Données sauvegardées dans le fichier CSV avec succès.");
-                return; // Sortir de la boucle une fois que la question a été trouvée et mise à jour
             }
+
+
+
         }
 
         // Afficher un message d'erreur si la question actuelle n'a pas été trouvée dans le fichier CSV
         Debug.Log("La question actuelle n'a pas été trouvée dans le fichier CSV.");
+
+        //LoadCSV(Path.Combine(Application.dataPath, "Regles_formatclassique.csv"));
     }
 
 
