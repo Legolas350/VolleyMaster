@@ -1,20 +1,20 @@
 Quelle est la taille du filet pour les hommes ?,2m43,3m,2m15,2m72,1,1,0
-Quelle est la taille du filet de volley pour les femmes ?,2m54,2m24,2m74,2m94,2,1,0
-Quelle est la longueur d'un terrain de volley ?,15m,25m,20m,18m,4,1,0
+Quelle est la taille du filet de volley pour les femmes ?,2m54,2m24,2m74,2m94,2,1,1
+Quelle est la longueur d'un terrain de volley ?,15m,25m,20m,18m,4,1,1
 Que se passe-t-il si l on touche le filet dans un match de volley ?,C est une faute,Rien ne se passe,Le jeu continue,L equipe adverse perd un point,1,1,0
-Qu est-ce qu une manchette au volley ?,Un coup effectué avec le coude,Un coup de tête,Un coup effectué avec le poignet et les doigts,Un coup de pied,3,2,0
-Qu est-ce qu une passe haute au volley ?,Une passe effectuee avec les pieds,Une passe effectuee en dessous du genou,Une passe effectuee avec les coudes,Une passe effectuee au-dessus de la tete,4,2,0
-Que se passe-t-il si l'on fait une double touche au block au volley ?,L équipe adverse marque un point,Le jeu continue normalement,C est une faute de jeu,L équipe qui a fait la double touche perd le point,2,2,0
-Que se passe-t-il si le ballon touche le filet au volley ?,Le jeu continue si le ballon passe de l autre cote du filet,C est une faute et l equipe adverse marque un point,Le point est rejoue,C est une faute mais le jeu continue,1,2,0
+Qu est-ce qu une manchette au volley ?,Un coup effectuï¿½ avec le coude,Un coup de tï¿½te,Un coup effectuï¿½ avec le poignet et les doigts,Un coup de pied,3,2,2
+Qu est-ce qu une passe haute au volley ?,Une passe effectuee avec les pieds,Une passe effectuee en dessous du genou,Une passe effectuee avec les coudes,Une passe effectuee au-dessus de la tete,4,2,2
+Que se passe-t-il si l'on fait une double touche au block au volley ?,L ï¿½quipe adverse marque un point,Le jeu continue normalement,C est une faute de jeu,L ï¿½quipe qui a fait la double touche perd le point,2,2,0
+Que se passe-t-il si le ballon touche le filet au volley ?,Le jeu continue si le ballon passe de l autre cote du filet,C est une faute et l equipe adverse marque un point,Le point est rejoue,C est une faute mais le jeu continue,1,2,1
 Combien de temps dure un match de volley ?,90 minutes,2 heures,1 heure,45 minutes,3,3,0
-Combien il y a-t-il de changement de joueur par équipe dans un match de volley ?,8 changements,6 changements,10 changements,4 changements,2,3,0
-Qu est-ce qu un ace au volley ?,Un service gagnant sans que le ballon soit touche par les adversaires,Une attaque directe derrière la ligne de service,Un coup retourne apres une reception,Un service qui touche le filet mais qui atterrit dans le camp adverse,1,4,0
-Que signifie out au volley ?,Un joueur est exclu du jeu,Le ballon est sorti des limites du terrain,Une passe est ratée,Un service est jugé invalide,2,4,0
+Combien il y a-t-il de changement de joueur par ï¿½quipe dans un match de volley ?,8 changements,6 changements,10 changements,4 changements,2,3,0
+Qu est-ce qu un ace au volley ?,Un service gagnant sans que le ballon soit touche par les adversaires,Une attaque directe derriï¿½re la ligne de service,Un coup retourne apres une reception,Un service qui touche le filet mais qui atterrit dans le camp adverse,1,4,0
+Que signifie out au volley ?,Un joueur est exclu du jeu,Le ballon est sorti des limites du terrain,Une passe est ratï¿½e,Un service est jugï¿½ invalide,2,4,0
 Que signifie j ai au volley ?,Une annonce pour indiquer qu un joueur va servir,Une erreur de reception du ballon,Un signal pour indiquer une faute,Une expression pour signaler qu un joueur est pret a recevoir le ballon,4,4,0
 Que signifie equerre au volley ?,Un coup joue avec precision dans le coin du terrain,Un joueur touchant le filet pendant le jeu,Une faute de pied lors du service,Une attaque reussie qui touche le sol pres de la ligne de fond,1,4,0
 Combien il y a-t-il de joueurs par equipe au volley ?,7 joueurs,5 joueurs,6 joueurs,4 joueurs,3,5,0
-Combien il y a-t-il de remplaçants sur le banc par equipe au volley ?,4 remplaçants,6 remplaçants,8 remplaçants,5 remplaçants,2,5,0
-Qu est-ce qu un libero au volley ?,Un joueur spécialise dans la defense et les relances,Un joueur charge de servir a chaque rotation,Un joueur qui occupe toujours la position de passeur,Un joueur qui a le droit de bloquer lors des rotations,1,5,0
+Combien il y a-t-il de remplaï¿½ants sur le banc par equipe au volley ?,4 remplaï¿½ants,6 remplaï¿½ants,8 remplaï¿½ants,5 remplaï¿½ants,2,5,0
+Qu est-ce qu un libero au volley ?,Un joueur spï¿½cialise dans la defense et les relances,Un joueur charge de servir a chaque rotation,Un joueur qui occupe toujours la position de passeur,Un joueur qui a le droit de bloquer lors des rotations,1,5,0
 Quelle est l equipe de volley qui a remporte le plus de titres de champion du monde ?,Italie,Russie,Bresil,Etats-Unis,3,6,0
 Combien de titres europeens la France a-t-elle remportes au volley ?,1 titre,3 titres,2 titres,Aucun titre,2,6,0
 Quelle est l equipe qui a remporte le plus de fois le championnat de France de volley ?,Paris Volley,Rennes Volley 35,Montpellier Volley UC,Tours Volley-Ball,4,6,0
